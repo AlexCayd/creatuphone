@@ -1,0 +1,43 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ventajas {
+
+    &__titulo {
+        font-size: 6rem;
+        text-align: center;
+        color: v.$primario;
+        border-top: 1rem solid v.$primario;
+        padding-top: 2rem;
+    }
+
+    &__grid {
+        @include m.tablet { 
+            @include m.grid (3, 4rem);
+        }
+    }
+}
+
+.ventaja {
+
+    &__info {
+        padding-top: 3rem;
+    }
+
+    &__titulo {
+        color: v.$primario;
+    }
+
+    &__titulo,
+    &__descripcion {
+        text-align: center;
+    }
+
+    &__ilustracion {
+        @include m.tablet { 
+            object-fit: cover;
+            height: 18rem;
+            margin: 0 auto;
+        }
+    }
+}

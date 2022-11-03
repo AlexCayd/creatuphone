@@ -1,0 +1,57 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.hero {
+    min-height: 45rem;
+    background-image: url(../img/hero.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom bottom;
+
+    @include m.desktop { 
+       min-height: 55rem;
+       background-position: left top;
+        background-image: url(../img/heroimg.jpeg);
+    }
+
+    &__texto {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.5rem;
+
+        @include m.tablet { 
+            padding-top: 4rem;
+        }
+    }
+
+    &__titulo, 
+    &__descripcion {
+        margin: .5rem 0;
+        text-align: left;
+
+        @include m.tablet { 
+            text-align: right;
+        }
+    }
+
+    &__titulo {
+        font-size: 3.8rem;
+        padding-bottom: 24rem;
+        text-align: center;
+
+        @include m.tablet { 
+            font-size: 7rem;
+            padding-bottom: 26rem;
+            padding-left: 10rem;
+            text-align: right;
+        }
+    }
+
+    &__descripcion {
+        font-size: 2.2rem;
+
+        @include m.tablet { 
+            font-size: 2.5rem;
+        }
+    }
+}

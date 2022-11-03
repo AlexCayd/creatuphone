@@ -1,0 +1,208 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cotizador {
+  
+    padding: 5rem 0;
+
+    &__borde-azul {
+        border: .5rem solid v.$primario;
+    }
+    &__heading {
+        font-size: 6rem;
+    }
+
+    &__formulario {
+        padding: 3rem;
+    }
+
+    &__campo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5rem;
+    }
+
+    &__3campos {
+        @include m.tablet { 
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+
+    &__label,
+    &__select {
+
+      font-size: 2.5rem;
+
+        @include m.tablet { 
+            font-size: 3.5rem;
+        }
+    }
+
+    &__label {
+        padding-right: 3rem;
+        padding-bottom: 1rem;
+
+        &--garantia {
+            font-size: 2.5rem;
+            
+
+            @include m.tablet { 
+                padding: 4rem;
+            }
+        }
+    }
+
+    &__boton {
+        background-color: v.$primario;
+        color: v.$blanco;
+        border-radius: 1.5rem;
+        transition-property: transform;
+        transition-duration: 300ms;
+        padding: 1rem;
+        text-align: center;
+        border: none;
+        font-size: 2.5rem;
+        width: 100%;
+
+        &:hover {
+            transform: scale(1.05);
+            color: v.$primario;
+            background-color: v.$secundario;
+        }
+    }
+
+    button {
+        &:hover {
+          transform: scale(1);
+        }
+    }
+
+    &__fieldset {
+        padding-bottom: 4rem;
+    }
+
+    &__spinner {
+      display: none;
+    }
+}   
+
+#cargando {
+  text-align: center;
+}
+#cargando img {
+  display: none;
+  margin: 0 auto;
+}
+#resultado  {
+  margin-bottom: 40px;
+}
+#resultado div {
+  border: 1px solid #0a2472;
+  text-align: center;
+  padding: 0  0 20px 0;
+}
+#resultado div p {
+  margin-bottom: 0;
+}
+#resultado div p.header {
+  background-color: #0a2472;
+  margin-bottom: 10px;
+  color:white;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.spinner {
+  margin: 5rem auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: v.$primario;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+// Código para JS
+
+.mensaje {
+  margin-top: 2rem;
+}
+
+.error {
+  background-color: v.$rojo;
+  border: .3rem solid v.$rojo;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: v.$blanco;
+  border-radius: 1.5rem;
+}
+
+.correcto {
+    background-color: v.$verde;
+    border: .3rem solid v.$verde;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: v.$blanco;
+    border-radius: 1.5rem;
+}
+
+.resumen {
+    font-size: 2.9rem;
+    color: v.$primario;
+}
+
+.total {
+    font-size: 2.7rem;
+    font-weight: bold;
+}
+
+.cuadro-resumen {
+    border: 3px solid v.$secundario;
+}

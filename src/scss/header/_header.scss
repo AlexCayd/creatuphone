@@ -1,0 +1,117 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    padding: 1rem 0 2rem 0;
+    background-color: v.$blanco;
+
+    @include m.tablet { 
+        padding: 1rem 0;
+        background-color: v.$grisClaro;
+    }
+
+    &__barra {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        @include m.tablet { 
+            flex-direction: row;
+            padding: 0 3rem 0 3rem;
+            gap: 0;
+        }
+    }
+
+    &__logo {
+        @include m.tablet { 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__imagen {
+        max-width: 30rem;
+
+        @include m.tablet { 
+            max-width: 10rem;
+        }
+    }
+
+    &__texto {
+        text-align: center;
+        font-size: 5rem;
+        margin: 0;
+
+        @include m.tablet { 
+            font-size: 3rem;
+        }
+    }
+}
+
+.navegacion {
+    width: 100%;
+    margin-bottom: 5rem;
+
+    @include m.tablet { 
+        margin-bottom: 0;
+    }
+
+    &__principal {
+        @include m.grid(2, 0);
+
+        @include m.tablet { 
+            display: flex;
+            justify-content: right;
+        }
+    }
+
+    &__enlace {
+        color: v.$blanco;
+        font-size: 2.5rem;
+        padding: 2rem;
+        background-color: v.$primario;
+        text-align: center;
+
+        &--claro {
+            background-color: darken(v.$secundario, 30%);
+        }
+
+        @include m.tablet { 
+            background-color: v.$grisClaro;
+            color: v.$primario;
+            margin-right: 2rem;
+            border-radius: 1.5rem;
+            transition-property: transform;
+            transition-duration: 300ms;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        &:hover {
+            @include m.tablet { 
+                background-color: darken(v.$secundario, 30%);
+                color: v.$blanco;
+                transform: scale(1.12) rotate(3deg);
+            }
+        }
+
+        &--boton {
+            @include m.tablet { 
+                background-color: v.$primario;
+                color: v.$blanco;
+            }
+
+            &:hover {
+                @include m.tablet { 
+                    background-color: darken(v.$primario, 30%);
+                    color: v.$blanco;
+                    transform: scale(1.12) rotate(3deg);
+                }
+            }
+        }
+    }
+}
+
